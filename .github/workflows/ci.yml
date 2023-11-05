@@ -9,14 +9,9 @@ jobs:
         
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-
-      - name: Run Cypress tests on Chrome
-        run: npx cypress run --browser chrome
-
-      - name: Run Cypress tests on Firefox
-        run: npx cypress run --browser firefox
-
-
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+      
       # Eklenen bölüm: Testler başarısız olduğunda ekran görüntülerini ve videoları arşivle
       - name: Archive Cypress screenshots and videos
         if: failure()
