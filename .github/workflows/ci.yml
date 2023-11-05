@@ -3,21 +3,25 @@ on: push
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-      
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        run: npx cypress run --browser ${{ matrix.browser }}
+
       # Eklenen bölüm: Testler başarısız olduğunda ekran görüntülerini ve videoları arşivle
       - name: Archive Cypress screenshots and videos
         if: failure()
         uses: actions/upload-artifact@v2
         with:
-          name: cypress-artifacts
+          name: cypress-artifacts-${{ matrix.browser }}
           path: |
             cypress/screenshots/
             cypress/videos/
