@@ -1,5 +1,4 @@
 Cypress.on('uncaught:exception', (err, runnable) => {
-    // Bu hataları önemsemiyoruz
     return false;
   });
 
