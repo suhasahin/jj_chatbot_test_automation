@@ -30,11 +30,11 @@ context('isimler', () => {
         sanatciIsimleri.forEach((sanatci) => {
             cy.visit('https://jollyjoker.com.tr/');
             cy.get('.chat-floating-action-button > .b-msg__txt').click({force: true});
-            cy.wait(10000);
+            cy.wait(3000);
             cy.get('.webchat__send-box-text-box__input').type('Sanatçıya Göre Etkinlik Ara' + '{enter}');
-            cy.wait(10000);
+            cy.wait(3000);
             cy.get('.webchat__send-box-text-box__input').type(sanatci + '{enter}');
-            cy.wait(10000);
+            cy.wait(3000);
             cy.get('.webchat__basic-transcript__activity-body', { timeout: 10000 }).then(($elem) => {
                 if ($elem.text().includes('Üzgünüm, anlamadım.')) {
                     cy.writeFile(filename, sanatci + '\n', { flag: 'a+' });
