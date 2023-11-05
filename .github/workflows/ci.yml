@@ -14,7 +14,7 @@ jobs:
 
       # Eklenen bölüm: Testler başarısız olduğunda ekran görüntülerini ve videoları arşivle
       - name: Archive Cypress screenshots and videos
-        if: failure() # Sadece testler başarısız olduğunda çalıştır.
+        if: failure()
         uses: actions/upload-artifact@v2
         with:
           name: cypress-artifacts
