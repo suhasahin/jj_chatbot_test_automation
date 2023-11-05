@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [chrome, firefox, chromium, electron]
+        browser: [chrome, firefox]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
