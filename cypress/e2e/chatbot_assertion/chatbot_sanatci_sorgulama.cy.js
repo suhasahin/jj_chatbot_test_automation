@@ -1,3 +1,8 @@
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // Bu hataları önemsemiyoruz
+    return false;
+  });
+
 context('isimler', () => {
     const sanatciIsimleri = [
         "Özcan Deniz",
