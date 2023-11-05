@@ -29,6 +29,7 @@ context('isimler', () => {
     it('Sanatçı isimlerini sırayla ara ve sonuçları kontrol et', () => {
         sanatciIsimleri.forEach((sanatci) => {
             cy.visit('https://jollyjoker.com.tr/');
+            cy.get('body > div.wrap > div.cookie > button').click({ force: true });
             cy.get('.chat-floating-action-button > .b-msg__txt').click({force: true});
             cy.wait(3000);
             cy.get('.webchat__send-box-text-box__input').type('Sanatçıya Göre Etkinlik Ara' + '{enter}');
