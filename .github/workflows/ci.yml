@@ -6,7 +6,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+
+      # Eklenen bölüm: Testler başarısız olduğunda ekran görüntülerini ve videoları arşivle
+      - name: Archive Cypress screenshots and videos
+        if: failure() # Sadece testler başarısız olduğunda çalıştır.
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots/
+            cypress/videos/
