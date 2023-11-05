@@ -2,11 +2,10 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [macos-latest]
-        browser: [chrome, firefox, electron, safari]
-    runs-on: ${{ matrix.os }}
+        browser: [chrome, chromium, firefox, chrome:canary, electron, edge]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
