@@ -35,9 +35,7 @@ context('isimler', () => {
             cy.wait(2000);
             cy.get('.webchat__send-box-text-box__input').type(sanatci + '{enter}');
             cy.wait(2000);
-
-            // Sonucu kontrol et
-            cy.get('.webchat__basic-transcript__activity-body').then(($elem) => {
+            cy.get('.webchat__basic-transcript__activity-body', { timeout: 10000 }).then(($elem) => {
                 if ($elem.text().includes('Üzgünüm, anlamadım.')) {
                     cy.writeFile(filename, sanatci + '\n', { flag: 'a+' });
                 }
