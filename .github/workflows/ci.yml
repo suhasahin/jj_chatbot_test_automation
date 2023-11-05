@@ -9,10 +9,10 @@ jobs:
         
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+
       - name: Run Cypress tests on Chrome
         run: npx cypress run --browser chrome
+
       - name: Run Cypress tests on Firefox
         run: npx cypress run --browser firefox
 
