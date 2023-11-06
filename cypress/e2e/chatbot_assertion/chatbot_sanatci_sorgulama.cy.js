@@ -10,8 +10,15 @@ context('isimler', () => {
         "Nihat Sırdar",
         "Emir Can İğrek",
         "Gökhan Türkmen",
-        "İsimsiz Sanatçı",
-        "Sanatçı Olmayan",
+        "Sefo",
+        "Seksendört",
+        "Selami Şahin",
+        "Selçuk Balcı",
+        "Selda Bağcan",
+        "Selin Geçit",
+        "Semicenk",
+        "Sena Şener & Tuğkan",
+        "Sencan Gürbüz",
 
     ];
 
