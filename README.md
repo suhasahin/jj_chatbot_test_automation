@@ -7,3 +7,6 @@ npx cypress open
 cypress/e2e/chatbot_assertion/
 
 cypress arayüzünden run > chatbot_sanatci_sorgulama.cy.js
+
+
+site: www.jollyjoker.com.tr
